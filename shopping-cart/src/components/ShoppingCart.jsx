@@ -5,7 +5,7 @@ import Stand from "../assets/images/Smartphone-Stand.jpeg";
 import Wireless from "../assets/images/Wireless-Headphones.jpeg";
 import USB from "../assets/images/USB-Cable.jpeg";
 
-const CartItems = [
+const initialCart = [
   {
     id: 1,
     name: "Wireless Headphones",
@@ -44,13 +44,21 @@ const CartItems = [
 ];
 
 const ShoppingCart = () => {
-  const [count, setCount] = useState(1);
+  const [cart, setCart] = useState(initialCart);
 
-  const increment = () => {
-    setCount(count + 1);
+  const increment = (id) => {
+    setCart((prevCount) =>
+      prevCount.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
   };
-  const decrement = () => {
-    setCount(count - 1);
+  const decrement = (id) => {
+    setCart((prevCount) =>
+      prevCount.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity - 1 } : item
+      )
+    );
   };
 
   return (
@@ -70,20 +78,25 @@ const ShoppingCart = () => {
             </tr>
           </thead>
           <tbody>
-            {CartItems.map((item) => {
+            {cart.map((item) => {
               return (
-                <tr>
+                <tr key={item.id}>
                   <td className="product">
                     <img src={item.image} alt={item.name} />
                     <p>{item.name}</p>
                   </td>
                   <td>${item.price}</td>
                   <td className="quantity-btn">
-                    <button onClick={increment}>+</button>
-                    <p>{count}</p>
-                    <button onClick={decrement}>-</button>
+                    <button onClick={() => increment(item.id)}>+</button>
+                    <span>{item.quantity}</span>
+                    <button
+                      onClick={() => decrement(item.id)}
+                      disabled={item.quantity <= 1}
+                    >
+                      -
+                    </button>
                   </td>
-                  <td>${item.price * item.quantity}</td>
+                  <td>${item.price * item.quantity.toFixed(2)}</td>
                 </tr>
               );
             })}

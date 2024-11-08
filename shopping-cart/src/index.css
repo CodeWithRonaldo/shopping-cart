@@ -46,12 +46,26 @@ th{
   
 }
 .quantity-btn button{
-  padding: 10px;
+  padding: 4px;
   cursor: pointer;
+  background-color: aliceblue;
+  border: 1px  solid black;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+
+.quantity-btn{
+  /* margin-inline:  1rem; */
+  
+
+  
+ 
 }
 .quantity-btn p{
-  margin-inline:  1rem;
-  padding: 10px;
+  
+  padding: 5px;
+  
 }
 
 .cart-total-container{
