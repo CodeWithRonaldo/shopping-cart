@@ -13,14 +13,13 @@
 .container h1{
   font-size: 5rem;
   text-align: center;
+  margin-bottom: 20px;
 }
 img{
   width: 120px;
 }
 
 table{
-  margin-top: 50px;
-  /* border: 1px solid  black; */
   width: 100%;
   
 
@@ -48,48 +47,54 @@ th{
 }
 .quantity-btn button{
   padding: 10px;
+  cursor: pointer;
 }
 .quantity-btn p{
-  margin-inline:  10px;
+  margin-inline:  1rem;
   padding: 10px;
 }
-/* .table-container{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.cart-totals table{
-  
-  
+.cart-total-container{
+  margin-top: 50px;
 }
-.cart-table table {
-  width: 700px;
-} */
 
 .cart-total{
   display: flex;
   justify-content: space-between;
-  /* gap: 20px; */
   align-items: center;
-  /* padding-top: 30px; */
-  /* width: 100%; */
+  
 }
-.table-cart{
-  /* width: 50%; */
-}
+
 
 .table-cart table{
   width:400px;
   border: none;
   background-color: aliceblue;
+  height:40px;
 }
-
-.checkout{
+.total-text{
+  font-size: 1.5rem;
+}
+.checkout-btn{
   background-color: blue;
   color: white;
   border-radius: 15px;
-  padding: 15px;
+  padding: 10px;
   border: none;
-  width: 50%;
+  cursor: pointer;
+  margin-left:210px ;
+  margin-top: 10px;
+  
+}
+
+
+.coupon-btn{
+  margin-left: 10px;
+  padding-left:5px;
+  padding-right: 5px ;
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  
 }

@@ -90,15 +90,15 @@ const ShoppingCart = () => {
           </tbody>
         </table>
         <div className="cart-total">
-          <div>
+          <div className="coupon">
             <p>Promotion Code</p>
-            <div>
-              <input type="text" placeholder="Coupon Code" />
-              <button>Apply Coupon</button>
-            </div>
+            <input type="text" placeholder="Coupon Code" />
+            <button className="coupon-btn">Apply Coupon</button>
           </div>
           <div>
-            <p>Cart Totals</p>
+            <div className="cart-total-container">
+              <p className="total-text">Cart Totals</p>
+            </div>
             <div className="table-cart">
               <table>
                 <tr>
@@ -111,7 +111,7 @@ const ShoppingCart = () => {
                   <td>$400.00</td>
                 </tr>
               </table>
-              <button className="checkout">PROCEED TO CHECKOUT</button>
+              <button className="checkout-btn">PROCEED TO CHECKOUT</button>
             </div>
           </div>
         </div>
