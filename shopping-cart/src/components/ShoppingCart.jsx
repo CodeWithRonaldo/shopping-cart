@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Bluetooth from "../assets/images/Bluetooth.jpeg";
 import Portable from "../assets/images/Portable-Charger.jpeg";
 import Stand from "../assets/images/Smartphone-Stand.jpeg";
@@ -44,9 +44,21 @@ const CartItems = [
 ];
 
 const ShoppingCart = () => {
+  const [count, setCount] = useState(1);
+
+  const increment = () => {
+    setCount(count + 1);
+  };
+  const decrement = () => {
+    setCount(count - 1);
+  };
+
   return (
     <div className="container">
-      <h1>Shopping Cart</h1>
+      <div>
+        <h1>Shopping Cart</h1>
+      </div>
+
       <div className="items">
         <table>
           <thead>
@@ -61,18 +73,48 @@ const ShoppingCart = () => {
             {CartItems.map((item) => {
               return (
                 <tr>
-                  <td>
+                  <td className="product">
                     <img src={item.image} alt={item.name} />
-                  <span>{item.name}</span>
+                    <p>{item.name}</p>
                   </td>
                   <td>${item.price}</td>
-                  <td>{item.quantity}</td>
+                  <td className="quantity-btn">
+                    <button onClick={increment}>+</button>
+                    <p>{count}</p>
+                    <button onClick={decrement}>-</button>
+                  </td>
                   <td>${item.price * item.quantity}</td>
                 </tr>
               );
             })}
           </tbody>
         </table>
+        <div className="cart-total">
+          <div>
+            <p>Promotion Code</p>
+            <div>
+              <input type="text" placeholder="Coupon Code" />
+              <button>Apply Coupon</button>
+            </div>
+          </div>
+          <div>
+            <p>Cart Totals</p>
+            <div className="table-cart">
+              <table>
+                <tr>
+                  <th>Subtotal</th>
+                  <td>$400.00</td>
+                </tr>
+
+                <tr>
+                  <th>Total</th>
+                  <td>$400.00</td>
+                </tr>
+              </table>
+              <button className="checkout">PROCEED TO CHECKOUT</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

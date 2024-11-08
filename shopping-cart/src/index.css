@@ -5,6 +5,11 @@
   box-sizing: border-box;
 
 }
+.container{
+  width: 800px;
+  margin-left: 200px;
+  
+}
 .container h1{
   font-size: 5rem;
   text-align: center;
@@ -35,4 +40,56 @@ th{
   padding: 20px;
   background-color: aliceblue;
   font-size: 1.5rem;
+}
+.product{
+  display: flex;
+  align-items: center;
+  
+}
+.quantity-btn button{
+  padding: 10px;
+}
+.quantity-btn p{
+  margin-inline:  10px;
+  padding: 10px;
+}
+/* .table-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-totals table{
+  
+  
+}
+.cart-table table {
+  width: 700px;
+} */
+
+.cart-total{
+  display: flex;
+  justify-content: space-between;
+  /* gap: 20px; */
+  align-items: center;
+  /* padding-top: 30px; */
+  /* width: 100%; */
+}
+.table-cart{
+  /* width: 50%; */
+}
+
+.table-cart table{
+  width:400px;
+  border: none;
+  background-color: aliceblue;
+}
+
+.checkout{
+  background-color: blue;
+  color: white;
+  border-radius: 15px;
+  padding: 15px;
+  border: none;
+  width: 50%;
 }
