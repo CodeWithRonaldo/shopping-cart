@@ -123,7 +123,7 @@ const ShoppingCart = () => {
               <table>
                 <tr>
                   <th>Subtotal</th>
-                  <td>{calculateSubtotal}</td>
+                  <td>{total}</td>
                 </tr>
 
                 <tr>
