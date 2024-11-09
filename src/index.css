@@ -32,12 +32,13 @@ table,  th, td {
 td{
   text-align: center;
 }
-td:first-child{
-  text-align: left;
+tr:nth-child(even){
+background-color: aliceblue;
 }
 th{
   padding: 20px;
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
+  background: rgb(119, 119, 191);
   font-size: 1.5rem;
 }
 .product{
@@ -90,7 +91,7 @@ th{
   font-size: 1.5rem;
 }
 .checkout-btn{
-  background-color: blue;
+  background: rgb(45, 45, 85);
   color: white;
   border-radius: 15px;
   padding: 10px;
@@ -98,7 +99,13 @@ th{
   cursor: pointer;
   margin-left:210px ;
   margin-top: 10px;
+  box-shadow: 0 4px  15px rgba(255, 0, 102, 0);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
   
+}
+.checkout-btn:hover{
+  box-shadow: 0 10px  20px rgba(255, 0, 102, 0.5);
+  transform: translate(-3px)
 }
 
 
@@ -107,8 +114,15 @@ th{
   padding-left:5px;
   padding-right: 5px ;
   border-radius: 5px;
-  background-color: blue;
+  background: rgb(45, 45, 85);
   color: white;
   cursor: pointer;
+  box-shadow: 0 4px  15px rgba(255, 0, 102, 0);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
   
+}
+
+.coupon-btn:hover{
+  box-shadow: 0 10px  20px rgba(255, 0, 102, 0.5);
+  transform: translate(-3px)
 }
